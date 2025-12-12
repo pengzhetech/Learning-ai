@@ -21,6 +21,7 @@
         <module>text2voice</module>
         <module>embed2vector</module>
         <module>rag</module>
+        <module>persistent</module>
     </modules>
 
     <properties>
