@@ -22,6 +22,7 @@
         <module>embed2vector</module>
         <module>rag</module>
         <module>persistent</module>
+        <module>tool-calling</module>
     </modules>
 
     <properties>
