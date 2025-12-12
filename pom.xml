@@ -18,6 +18,7 @@
         <module>prompt-template</module>
         <module>structured-output</module>
         <module>text2image</module>
+        <module>text2voice</module>
     </modules>
 
     <properties>
