@@ -30,7 +30,7 @@ public class SaaLLMConfig
     {
         return DashScopeChatModel.builder()
                         .dashScopeApi(DashScopeApi.builder()
-                                    .apiKey(System.getenv("aliQwen-api"))
+                                    .apiKey("sk-4baafe3feb254b13bb9ef4b750e0bb1d")
                                 .build())
                 .defaultOptions(
                         DashScopeChatOptions.builder().withModel(DEEPSEEK_MODEL).build()
@@ -42,7 +42,7 @@ public class SaaLLMConfig
     public ChatModel qwen()
     {
         return DashScopeChatModel.builder().dashScopeApi(DashScopeApi.builder()
-                        .apiKey(System.getenv("aliQwen-api"))
+                        .apiKey("sk-4baafe3feb254b13bb9ef4b750e0bb1d")
                         .build())
                 .defaultOptions(
                         DashScopeChatOptions.builder()

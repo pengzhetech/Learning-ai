@@ -23,6 +23,8 @@
         <module>rag</module>
         <module>persistent</module>
         <module>tool-calling</module>
+        <module>local-mcp-server</module>
+        <module>local-mcp-client</module>
     </modules>
 
     <properties>
