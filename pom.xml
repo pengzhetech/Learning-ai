@@ -20,6 +20,7 @@
         <module>text2image</module>
         <module>text2voice</module>
         <module>embed2vector</module>
+        <module>rag</module>
     </modules>
 
     <properties>
