@@ -13,6 +13,7 @@
         <module>hello-word</module>
         <module>ollama</module>
         <module>chat-client</module>
+        <module>streaming</module>
     </modules>
 
     <properties>
