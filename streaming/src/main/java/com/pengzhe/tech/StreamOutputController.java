@@ -37,11 +37,24 @@ public class StreamOutputController {
     @Resource(name = "qwenChatClient")
     private ChatClient qwenChatClient;
 
+    /**
+     * http://localhost:8004/stream/chatflux3
+     *
+     * @param question
+     * @return
+     */
     @GetMapping(value = "/stream/chatflux3")
     public Flux<String> chatflux3(@RequestParam(name = "question", defaultValue = "你是谁") String question) {
         return deepseekChatClient.prompt(question).stream().content();
     }
 
+
+    /**
+     * http://localhost:8004/stream/chatflux4
+     *
+     * @param question
+     * @return
+     */
     @GetMapping(value = "/stream/chatflux4")
     public Flux<String> chatflux4(@RequestParam(name = "question", defaultValue = "你是谁") String question) {
         return qwenChatClient.prompt(question).stream().content();
