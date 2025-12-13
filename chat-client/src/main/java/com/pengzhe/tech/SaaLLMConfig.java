@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class SaaLLMConfig {
     @Bean
     public DashScopeApi dashScopeApi() {
-        return DashScopeApi.builder().apiKey(System.getenv("aliQwen_api")).build();
+        return DashScopeApi.builder().apiKey("sk-4baafe3feb254b13bb9ef4b750e0bb1d").build();
     }
 
 

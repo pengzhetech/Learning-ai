@@ -18,7 +18,7 @@ public class ChatClientControllerV2 {
     private ChatClient dashScopechatClientv2;
 
     /**
-     * http://localhost:8003/chatclientv2/dochat
+     * http://localhost:8004/chatclientv2/dochat
      *
      * @param msg
      * @return
@@ -31,7 +31,7 @@ public class ChatClientControllerV2 {
     }
 
     /**
-     * http://localhost:8003/chatmodelv2/dochat
+     * http://localhost:8004/chatmodelv2/dochat
      *
      * @param msg
      * @return
