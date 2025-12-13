@@ -10,35 +10,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * @auther zzyybs@126.com
  * @create 2025-07-28 20:10
  * @Description 知识出处
  * https://help.aliyun.com/zh/model-studio/text-to-image?spm=a2c4g.11186623.help-menu-2400256.d_0_5_0.1a457d9dv6o7Kc&accounttraceid=6ec3bf09599f424a91a2a88b27b31570nrdd
  */
 @RestController
-public class Text2ImageController
-{
+public class Text2ImageController {
     // img model
     public static final String IMAGE_MODEL = "wanx2.1-t2i-turbo";
 
     @Resource
     private ImageModel imageModel;
 
-
     /**
-     * zzyybs@126.com
      * http://localhost:8009/t2i/image
+     *
      * @param prompt
      * @return
      */
     @GetMapping(value = "/t2i/image")
-    public String image(@RequestParam(name = "prompt",defaultValue = "刺猬") String prompt)
-    {
-        return imageModel.call(
-                    new ImagePrompt(prompt, DashScopeImageOptions.builder().withModel(IMAGE_MODEL).build())
-                )
-                .getResult()
-                .getOutput()
-                .getUrl();
+    public String image(@RequestParam(name = "prompt", defaultValue = "刺猬") String prompt) {
+        return imageModel.call(new ImagePrompt(prompt, DashScopeImageOptions.builder()
+                .withModel(IMAGE_MODEL).build())).getResult().getOutput().getUrl();
+    }
+
+    /**
+     * http://localhost:8009/t2i/image/base
+     *
+     * @param prompt
+     * @return
+     */
+    @GetMapping(value = "/t2i/image/base")
+    public String imageBase(@RequestParam(name = "prompt", defaultValue = "刺猬") String prompt) {
+        return imageModel.call(new ImagePrompt(prompt, DashScopeImageOptions.builder()
+                .withModel(IMAGE_MODEL).build())).getResult().getOutput().getB64Json();
     }
 }

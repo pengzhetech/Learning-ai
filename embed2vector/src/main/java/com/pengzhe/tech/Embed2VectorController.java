@@ -23,8 +23,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-public class Embed2VectorController
-{
+public class Embed2VectorController {
     @Resource
     private EmbeddingModel embeddingModel;
 
@@ -39,8 +38,7 @@ public class Embed2VectorController
      * @return
      */
     @GetMapping("/text2embed")
-    public EmbeddingResponse text2Embed(String msg)
-    {
+    public EmbeddingResponse text2Embed(String msg) {
         //EmbeddingResponse embeddingResponse = embeddingModel.call(new EmbeddingRequest(List.of(msg), null));
 
         EmbeddingResponse embeddingResponse = embeddingModel.call(new EmbeddingRequest(List.of(msg),
@@ -56,13 +54,11 @@ public class Embed2VectorController
      * 文本向量化 后存入向量数据库RedisStack
      */
     @GetMapping("/embed2vector/add")
-    public void add()
-    {
+    public void add() {
         List<Document> documents = List.of(
                 new Document("i study LLM"),
                 new Document("i love java")
         );
-
         vectorStore.add(documents);
     }
 
@@ -70,12 +66,12 @@ public class Embed2VectorController
     /**
      * 从向量数据库RedisStack查找，进行相似度查找
      * http://localhost:8011/embed2vector/get?msg=LLM
+     *
      * @param msg
      * @return
      */
     @GetMapping("/embed2vector/get")
-    public List getAll(@RequestParam(name = "msg") String msg)
-    {
+    public List getAll(@RequestParam(name = "msg") String msg) {
         SearchRequest searchRequest = SearchRequest.builder()
                 .query(msg)
                 .topK(2)
